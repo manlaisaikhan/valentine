@@ -486,6 +486,20 @@
             const celebration = document.getElementById('celebration');
             celebration.classList.add('active');
 
+            // Send email notification
+            fetch('https://formsubmit.co/ajax/Batzolboo2007@gmail.com', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    _subject: '💖 Тийм гэж хариуллаа!',
+                    message: 'Тийм гэж дарлаа! ❤️',
+                    date: new Date().toLocaleString('mn-MN')
+                })
+            }).catch(() => {});
+
             // Create confetti
             createConfetti();
 
